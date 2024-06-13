@@ -193,9 +193,9 @@ def api_list_locations(request):
             content["state"] = state
         except State.DoesNotExist:
             return JsonResponse(
-        {"message": "Invalid state abbreviation"},
-        status=400,
-        )
+                {"message": "Invalid state abbreviation"},
+                status=400,
+            )
 
         photo = get_photo(content["city"], content["state"].abbreviation)
         content.update(photo)

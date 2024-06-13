@@ -32,4 +32,10 @@ def get_weather_data(city, state):
         "temp": temp,
         "description": description
     }
-    return weather
+    try:
+        return weather
+    except:
+        return {
+            "temp": None,
+            "description": None
+        }
